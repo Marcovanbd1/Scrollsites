@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* Grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -43,7 +42,7 @@
       opacity: 0.4;
     }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -109,7 +108,7 @@
       letter-spacing: 0.15em;
     }
 
-    /* ─── SECTIONS ─── */
+    /* SECTIONS */
     .section {
       padding: clamp(4rem, 10vw, 10rem) clamp(1.5rem, 6vw, 6rem);
       border-bottom: 1px solid var(--rule);
@@ -149,7 +148,7 @@
       background: var(--accent-light);
     }
 
-    /* ─── THE IDEA ─── */
+    /* THE IDEA */
     .idea-text {
       font-size: clamp(1.8rem, 4vw, 3.2rem);
       font-weight: 300;
@@ -163,7 +162,7 @@
       color: var(--accent);
     }
 
-    /* ─── TWO COL ─── */
+    /* TWO COL */
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -191,7 +190,7 @@
       font-weight: 300;
     }
 
-    /* ─── PULL QUOTE ─── */
+    /* PULL QUOTE */
     .pull-quote {
       padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
       background: var(--ink);
@@ -233,7 +232,7 @@
       font-style: normal;
     }
 
-    /* ─── CARDS ─── */
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -272,7 +271,7 @@
       font-weight: 300;
     }
 
-    /* ─── CONTRAST SECTION ─── */
+    /* CONTRAST SECTION */
     .contrast {
       background: var(--accent);
       color: var(--paper);
@@ -291,7 +290,7 @@
 
     .contrast-headline em { font-style: italic; opacity: 0.7; }
 
-    /* ─── CTA ─── */
+    /* CTA */
     .cta-section {
       padding: clamp(5rem, 12vw, 12rem) clamp(1.5rem, 6vw, 6rem);
       text-align: center;
@@ -346,7 +345,7 @@
       transform: translateY(-2px);
     }
 
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     footer {
       padding: 2rem clamp(1.5rem, 6vw, 6rem);
       border-top: 1px solid var(--rule);
@@ -370,13 +369,13 @@
       text-decoration: none;
     }
 
-    /* ─── ANIMATIONS ─── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── SCROLL INDICATOR ─── */
+    /* SCROLL INDICATOR */
     .scroll-line {
       position: fixed;
       top: 0; left: 0;
@@ -472,10 +471,10 @@
   <p class="section-label">Who uses Scrollsites</p>
   <div class="two-col">
     <div>
-      <p class="col-text">Chief Medical Officers preparing for board conversations. Sales leaders briefing key accounts. Coaches orienting new clients. Consultants framing complex engagements. Anyone with a high-stakes meeting that deserves more than a calendar invite and a hope.</p>
+      <p class="col-text">Anyone who takes meetings seriously. People who understand that preparation is not just about knowing your material — it's about shaping how the other person arrives. Leaders, founders, consultants, coaches, clinicians. Anyone with a conversation that matters.</p>
     </div>
     <div>
-      <p class="col-text">Already used across NHS organisations, health technology companies, and civic institutions across the UK. Landing with Chief Commercial Officers, Clinical Directors, and executive teams who have never seen anything like it — and remember the person who sent it.</p>
+      <p class="col-text">Already landing across NHS organisations, health technology companies, and civic institutions across the UK. Used before board conversations, partnership pitches, clinical reviews, and strategy sessions — by people who want to get the most out of every meeting they're in.</p>
     </div>
   </div>
 </section>
@@ -483,18 +482,18 @@
 <!-- CTA -->
 <div class="cta-section" data-scroll>
   <h2 class="cta-headline">Your next meeting<br>deserves a <em>Scrollsite.</em></h2>
-  <p class="cta-sub">We're building the tools to make this possible for everyone. Early access is open to organisations who understand that the frame matters.</p>
+  <p class="cta-sub">We're building the tools to make this possible for everyone. Early access is open to those who understand that the frame matters.</p>
   <a href="mailto:hello@neighbourhoodcolab.co.uk" class="cta-link">Get early access</a>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2026 Scrollsites.org</span>
-  <span>A new communication format — <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a></span>
-  <span><a href="https://www.linkedin.com/in/mark-winterburn-08a614351/" target="_blank" rel="noopener">LinkedIn — Mark Winterburn</a> · Invented on the Isle of Portland, England</span>
+  <span>&copy; 2026 Scrollsites.org</span>
+  <span>A new communication format &mdash; <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a></span>
+  <span><a href="https://www.linkedin.com/in/mark-winterburn-08a614351/" target="_blank" rel="noopener">LinkedIn &mdash; Mark Winterburn</a> &middot; Invented on the Isle of Portland, England</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll progress line
   const scrollLine = document.getElementById('scrollLine');
   window.addEventListener('scroll', () => {
@@ -502,7 +501,7 @@
     scrollLine.style.width = (pct * 100) + '%';
   });
 
-  // Intersection observer for scroll reveals
+  // Sections visible by default — animate class added by JS as progressive enhancement
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) el.target.classList.add('visible');
